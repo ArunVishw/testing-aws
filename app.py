@@ -12,8 +12,8 @@ else:
 app.register_blueprint(home, url_prefix="")
 app.register_blueprint(admin, url_prefix="/admin")
 
+db.init_app(app)
+db.create_all(app=app)
 
 if __name__ == "__main__":
-    db.init_app(app)
-    db.create_all(app=app)
     app.run(debug=True)

@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <h6 class="title">{{msg}}</h6>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Welcome {{data.email}}</h1>
+    <form action="logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
